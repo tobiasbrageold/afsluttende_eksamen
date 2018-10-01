@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald/Oswald-Regular.ttf);
+  font-weight:normal;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url(../fonts/Oswald/Oswald-Bold.ttf);
+  font-weight:bold;
+}
+
+@font-face {
+  font-family: Open_Sans;
+  src: url(../fonts/Open_Sans/OpenSans-Regular.ttf);
+  font-weight:normal;
+}
+
+@font-face {
+  font-family: Open_Sans;
+  src: url(../fonts/Open_Sans/OpenSans-ExtraBold.ttf);
+  font-weight:bold;
+}
+
+* {
+  outline:0;
+  margin:0;
+  padding:0;
+}
+
+body {
+  background-color:#F0F0F0;
+}
+
+#siteMain {
+  width:1170px;
+  margin:auto;
+}
+
+#siteContainer {
+  width:1140px;
+  background-color:#fff;
+  float:left;
+  padding:0 15px 0 15px;
+}
+
+#siteHeader {
+  float:left;
+  height:160px;
+  width:1140px;
+}
+
+#siteHeaderImg {
+  float:left;
+  height:80px;
+  margin-top:40px;
+}
+
+#siteNav {
+  float:left;
+  height:50px;
+  width:1140px;
+  background-color:#353537;
+  border-bottom:4px solid #ffc000;
+  margin-bottom:20px;
+  list-style: none;
+}
+
+.siteNavItem {
+  float:left;
+}
+
+.siteNavLink {
+  float:left;
+  height:35px;
+  padding:16px 15px 0 15px;
+  color:#fff;
+  text-decoration: none;
+  font-family: Open_Sans;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.siteNavLinkActive {
+  background-color:#ffc000;
+}
+
+#siteContent {
+  width:750px;
+  float:left;
+}
+
+#siteAside {
+  width:300px;
+  float:right;
+  background-color:#f0f0f0;
+  padding:15px 30px 15px 30px;
+}
+
+
+
+
+
+
+#siteFooter {
+  min-height:100px; /* delete */
+  width:1140px;
+  float:left;
+  background-color:#353537;
+  margin-top:20px;
+}
