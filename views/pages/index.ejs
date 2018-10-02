@@ -13,59 +13,99 @@
         <main id="siteMain">
             <div id="siteContainer">
                 <div id="siteHeader">
-                    <img id="siteHeaderImg" src="/img/logo/logo.png"> <!-- /siteHeaderImg -->
+                    <a href="/">
+                        <img id="siteHeaderImg" src="/img/logo/logo.png"> <!-- /siteHeaderImg -->
+                    </a>
                 </div> <!-- /header -->
                 <ul id="siteNav">
-                    <li class="siteNavItem">
-                        <a class="siteNavLink siteNavLinkActive" href="/">
-                            <i class="fas fa-home"></i>
-                            FORSIDE
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            BILER
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            BÅDE
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            BIKE'S
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            ARKIVET
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            KONTAKT
-                        </a>
-                    </li>
-                    <li class="siteNavItem">
-                        <a class="siteNavLink" href="/">
-                            REDAKTIONEN
-                        </a>
-                    </li>
+                    <!-- navigation placed here -->
                 </ul> <!-- /siteNav -->
                 <div id="siteContent">
-                    FORSIDE
+                    <!-- <p id="siteBreadcrumb">
+                        Forside / Aktivitet
+                    </p> -->
+                    <h1 id="siteMainTitle">
+                        SENESTE ARTIKLER
+                    </h1>
+                    <ul id="indexArticleList">
+                        <!-- articles placed here -->
+                    </ul> <!-- /indexArticleList -->
                 </div> <!-- /siteContent -->
                 <aside id="siteAside">
-
+                    <form id="asideSrcForm" method="GET" action="/search/">
+                        <input id="asideSrcField" type="text" name="q" placeholder="Søg i arkivet...">
+                        <button id="asideSrcSubmit" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form> <!-- /asideSrcForm -->
+                    <h2 id="asideTitle">
+                        MEST LÆSTE
+                    </h2> <!-- /asideTitle -->
+                    <ul id="asideMostList">
+                        <!-- most viewed articles placed here -->
+                    </ul> <!-- /asideMostList -->
+                    <h2 id="asideTitle">
+                        SPONSOR
+                    </h2> <!-- /asideTitle -->
+                    <ul id="asideSponsorList">
+                        <!-- sponsors placed here -->
+                    </ul> <!-- /asideSponsorList -->
                 </aside> <!-- /siteAside -->
                 <footer id="siteFooter">
-                    
+                    <ul id="footerSepList">
+                        <li class="footerSepItem">
+                            <h2 class="footerSepTitle">
+                                Adresse
+                            </h2>
+                            <ul class="footerInfoList">
+                                <li class="footerInfoItemBold">
+                                    Magasinet Bil, Båd & Bike
+                                </li>
+                                <li class="footerInfoItem">
+                                    Marielundvej 46 E
+                                </li>
+                                <li class="footerInfoItem">
+                                    2730 Herlev
+                                </li>
+                                <li class="footerInfoItem">
+                                    Denmark
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footerSepItem">
+                            <h2 class="footerSepTitle">
+                                Kontakt
+                            </h2>
+                            <ul class="footerInfoList">
+                                <li class="footerInfoItem">
+                                    Telefon: +45 7011 5100
+                                </li>
+                                <li class="footerInfoItem">
+                                    Fax: +45 4485 8925
+                                </li>
+                                <li class="footerInfoItem">
+                                    E-mail: redaktionen@bbbmag.dk
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footerSepItem">
+                            <h2 class="footerSepTitle">
+                                Nyhedsbrev
+                            </h2>
+                            <div id="footerNewsForm">
+                                <input id="footerNewsField" type="text" placeholder="E-mailadresse">
+                                <input id="footerNewsAdd" class="footerNewsBtn" type="button" value="TILMELD">
+                                <input id="footerNewsRemove" class="footerNewsBtn" type="button" value="AFMELD">
+                            </div> <!-- /footerNewsForm -->
+                        </li>
+                    </ul> <!-- /footerSepList -->
                 </footer> <!-- /siteFooter -->
             </div> <!-- /siteContainer -->
         </main> <!-- /main -->
 
         <!-- script -->
-        <script src="/js/main.js"></script>
+        <script src="/js/navigation.js"></script>
+        <script src="/js/home.js"></script>
+        <script src="/js/footer.js"></script>
     </body>
 </html>
