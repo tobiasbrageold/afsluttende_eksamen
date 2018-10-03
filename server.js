@@ -14,6 +14,6 @@ require("./config/db_config") (app);
 
 app.use(express.static('public'));
 
-const port = 3123;
+const port = 3000;
 app.listen(port);
 console.log(`Server started http://localhost:${port}`);

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Forside</title>
+        <title>Magasinet - Forside</title>
         <!-- style -->
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -21,9 +21,6 @@
                     <!-- navigation placed here -->
                 </ul> <!-- /siteNav -->
                 <div id="siteContent">
-                    <!-- <p id="siteBreadcrumb">
-                        Forside / Aktivitet
-                    </p> -->
                     <h1 id="siteMainTitle">
                         SENESTE ARTIKLER
                     </h1>
@@ -32,12 +29,7 @@
                     </ul> <!-- /indexArticleList -->
                 </div> <!-- /siteContent -->
                 <aside id="siteAside">
-                    <form id="asideSrcForm" method="GET" action="/search/">
-                        <input id="asideSrcField" type="text" name="q" placeholder="Søg i arkivet...">
-                        <button id="asideSrcSubmit" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form> <!-- /asideSrcForm -->
+                    <% include ../partials/asideArchive %>
                     <h2 id="asideTitle">
                         MEST LÆSTE
                     </h2> <!-- /asideTitle -->
@@ -51,55 +43,7 @@
                         <!-- sponsors placed here -->
                     </ul> <!-- /asideSponsorList -->
                 </aside> <!-- /siteAside -->
-                <footer id="siteFooter">
-                    <ul id="footerSepList">
-                        <li class="footerSepItem">
-                            <h2 class="footerSepTitle">
-                                Adresse
-                            </h2>
-                            <ul class="footerInfoList">
-                                <li class="footerInfoItemBold">
-                                    Magasinet Bil, Båd & Bike
-                                </li>
-                                <li class="footerInfoItem">
-                                    Marielundvej 46 E
-                                </li>
-                                <li class="footerInfoItem">
-                                    2730 Herlev
-                                </li>
-                                <li class="footerInfoItem">
-                                    Denmark
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footerSepItem">
-                            <h2 class="footerSepTitle">
-                                Kontakt
-                            </h2>
-                            <ul class="footerInfoList">
-                                <li class="footerInfoItem">
-                                    Telefon: +45 7011 5100
-                                </li>
-                                <li class="footerInfoItem">
-                                    Fax: +45 4485 8925
-                                </li>
-                                <li class="footerInfoItem">
-                                    E-mail: redaktionen@bbbmag.dk
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="footerSepItem">
-                            <h2 class="footerSepTitle">
-                                Nyhedsbrev
-                            </h2>
-                            <div id="footerNewsForm">
-                                <input id="footerNewsField" type="text" placeholder="E-mailadresse">
-                                <input id="footerNewsAdd" class="footerNewsBtn" type="button" value="TILMELD">
-                                <input id="footerNewsRemove" class="footerNewsBtn" type="button" value="AFMELD">
-                            </div> <!-- /footerNewsForm -->
-                        </li>
-                    </ul> <!-- /footerSepList -->
-                </footer> <!-- /siteFooter -->
+                <% include ../partials/siteFooter %>
             </div> <!-- /siteContainer -->
         </main> <!-- /main -->
 

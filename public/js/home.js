@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 if(elmDesc.length >= 200) {
                     finalDesc = elmDesc.slice(0, 200);
-                    finalDesc += '...';
+                    finalDesc += ' ...';
                 } else {
                     finalDesc = elmDesc;
                 }
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ${finalTit}
                         </h2>
                         <span class="indexArticleInfoSpan">
-                            <span class="indexArticleAbout"><i class="far fa-clock indexArticleIcon"></i>${elmDate.getDate()}. ${monthName[elmDate.getMonth()]} KL. ${elmDate.getHours()}:${elmDate.getMinutes()}</span>
+                            <span class="indexArticleAbout"><i class="far fa-clock indexArticleIcon"></i>${elmDate.getDate()}. ${monthName[elmDate.getMonth()]} KL. ${twoDigit(elmDate.getHours())}:${twoDigit(elmDate.getMinutes())}</span>
                             <span class="indexArticleAbout"><i class="fas fa-comments indexArticleIcon"></i>${elmCommCount} KOMMENTARER</span>
                             <span class="indexArticleAbout"><i class="far fa-eye indexArticleIcon"></i>${element.views} VISNINGER</span>
                         </span>
@@ -103,3 +103,12 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     });
 });
+
+// ---------- convert one digit to two digits ----------
+function twoDigit(value) {
+    value = value.toString();
+    if(value.length == 1)
+        return '0'+value;
+    else
+        return value;
+}

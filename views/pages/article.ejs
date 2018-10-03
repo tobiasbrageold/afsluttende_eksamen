@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Magasinet - Artikel</title>
+        <!-- style -->
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <main id="siteMain">
+            <div id="siteContainer">
+                <div id="siteHeader">
+                    <a href="/">
+                        <img id="siteHeaderImg" src="/img/logo/logo.png"> <!-- /siteHeaderImg -->
+                    </a>
+                </div> <!-- /header -->
+                <ul id="siteNav">
+                    <!-- navigation placed here -->
+                </ul> <!-- /siteNav -->
+                <div id="siteContent">
+                    <span id="siteBreadcrumb">
+                        <!-- breadcrumbs placed here -->
+                    </span>
+                    <h1 id="siteMainTitle">
+                        <!-- content title placed here -->
+                    </h1>
+                    <span class="siteCatInfoSpan">
+                        <span class="indexArticleAbout" id="articleDate"></span>
+                        <span class="indexArticleAbout" id="articleComments"></span>
+                        <span class="indexArticleAbout" id="articleViews"></span>
+                    </span>
+                    <p class="siteCatDescription" id="articleText">
+                        <!-- article text placed here -->
+                    </p>
+                    <div id="articleEditorCon">
+                        <!-- editor placed here -->
+                    </div>
+                    <h1 id="articleCommTitle">
+                        KOMMENTARER
+                    </h1>
+                    <ul id="artCommList">
+                        <!-- comments placed here -->
+                    </ul>
+                    <div id="commentForm">
+                        <h2 id="commentFormTitle">
+                            Din kommentar
+                        </h2>
+                        <label id="commentLaName">
+                            Dit navn
+                        </label>
+                        <label id="commentLaMail">
+                            Din e-mailadresse
+                        </label>
+                        <input type="text" id="commentName" name="name" value="name" require>
+                        <input type="text" id="commentMail" name="email" value="mail@mail.com" require>
+                        <label id="commentLaText">
+                            Kommentar
+                        </label>
+                        <textarea id="commentMessage">hello world</textarea>
+                        <input id="commentSubmit" type="button" value="UDFØR">
+                    </div> <!-- /commentForm -->
+                </div> <!-- /siteContent -->
+                <aside id="siteAside">
+                    <% include ../partials/asideArchive %>
+                    <h2 id="asideTitle">
+                        MEST LÆSTE
+                    </h2> <!-- /asideTitle -->
+                    <ul id="asideMostList">
+                        <!-- most viewed articles placed here -->
+                    </ul> <!-- /asideMostList -->
+                    <h2 id="asideTitle">
+                        SPONSOR
+                    </h2> <!-- /asideTitle -->
+                    <ul id="asideSponsorList">
+                        <!-- sponsors placed here -->
+                    </ul> <!-- /asideSponsorList -->
+                </aside> <!-- /siteAside -->
+                <% include ../partials/siteFooter %>
+            </div> <!-- /siteContainer -->
+        </main> <!-- /main -->
+
+        <!-- script -->
+        <script src="/js/article.js"></script>
+        <script src="/js/footer.js"></script>
+    </body>
+</html>

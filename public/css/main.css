@@ -96,21 +96,60 @@ body {
   background-color:#ffc000;
 }
 
+/* ---------- breadcrumb ---------- */
+
+#siteBreadcrumb {
+  width:750px;
+  float:left;
+  margin-top:20px;
+  height:20px;
+}
+
+#breadcrumbSeperator {
+  float:left;
+  font-size:14px;
+  color:#cdd7e3;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+}
+
+#breadcrumbHome {
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  text-decoration: none;
+  font-size:14px;
+  margin-right:8px;
+}
+
+#breadcrumbOther {
+  float:left;
+  color:#777777;
+  font-family: Open_Sans;
+  font-weight: normal;
+  text-decoration: none;
+  font-size:14px;
+  margin-left:8px;
+  margin-right:8px;
+}
+
+#breadcrumbArticle {
+  float:left;
+  color:#777777;
+  font-family: Open_Sans;
+  font-weight: normal;
+  text-decoration: none;
+  font-size:14px;
+  margin-left:8px;
+}
+
 /* ---------- main content ---------- */
 
 #siteContent {
   width:750px;
   float:left;
-}
-
-#siteBreadcrumb {
-  width:750px;
-  float:left;
-  color:#353537;
-  font-family: Open_Sans;
-  font-weight: normal;
-  font-size:14px;
-  margin-top:20px;
 }
 
 #siteMainTitle {
@@ -162,14 +201,14 @@ body {
   color:#777777;
   font-family: Oswald;
   font-weight: normal;
-  font-size:14px;
+  font-size:13px;
   margin-right:12px;
   margin-bottom:5px;
 }
 
 .indexArticleIcon {
   padding-right:5px;
-  font-size:16px;
+  font-size:14px;
 }
 
 .indexArticleDescription {
@@ -181,6 +220,7 @@ body {
   font-size:14px;
   margin-top:10px;
   min-height:100px;
+  line-height: 25px;
 }
 
 .indexArticleTagCon {
@@ -208,6 +248,299 @@ body {
   font-weight: normal;
   margin:15px 15px 0 0;
   text-decoration: none;
+}
+
+#siteCatList {
+  width:750px;
+  float:left;
+  min-height:100px; /* delete */
+  list-style:none;
+}
+
+.siteCatItem {
+  float:left;
+  width:750px;
+  margin-top:20px;
+}
+
+.siteCatTitle {
+  float:left;
+  width:750px;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:24px;
+}
+
+.siteCatInfoSpan {
+  width:750px;
+  float:left;
+  margin-top:10px;
+}
+
+.siteCatDescription {
+  width:750px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  margin-top:10px;
+  line-height: 25px;
+}
+
+.siteCatMore {
+  float:left;
+  background-color:#e6e6e6;
+  padding:15px 35px 15px 35px;
+  cursor: pointer;
+  font-size:14px;
+  color:#777;
+  font-family:Oswald;
+  font-weight: normal;
+  margin:15px 15px 0 0;
+  text-decoration: none;
+}
+
+#articleEditorCon {
+  width:750px;
+  float:left;
+  margin-top:10px;
+}
+
+#artEditorImg {
+  float:left;
+  height:70px;
+  max-width:70px;
+}
+
+#artEditorHead {
+  width:670px;
+  float:left;
+  padding-left:10px;
+}
+
+#artEditorTitle {
+  float:left;
+  font-size:18px;
+  color:#353537;
+  font-family:Open_Sans;
+  font-weight: normal;
+}
+
+#artEditorRole {
+  float:left;
+  font-size:14px;
+  color:#777777;
+  font-family:Open_Sans;
+  font-weight: normal;
+  margin-top:4px;
+  margin-left:10px;
+}
+
+#artEditorAbout {
+  width:670px;
+  float:left;
+  padding-left:10px;
+  font-size:14px;
+  color:#353537;
+  font-family:Open_Sans;
+  font-weight: normal;
+  margin-top:5px;
+}
+
+/* ---------- article comments ---------- */
+
+#artCommList {
+  width:750px;
+  float:left;
+  list-style: none;
+}
+
+.artCommItem {
+  float:left;
+  width:750px;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+.artCommIconCon {
+  width:35px;
+  float:left;
+}
+
+.artCommIcon {
+  font-size:25px;
+  color:#353537;
+}
+
+.artCommCon {
+  width:715px;
+  float:left;
+  border-bottom:1px solid #eeeeee;
+  padding-bottom:20px;
+}
+
+.artCommName {
+  width:715px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:18px;
+  line-height: 18px;
+}
+
+.artCommDateCon {
+  width:715px;
+  float:left;
+  color:#777777;
+  font-family: Oswald;
+  font-weight: normal;
+  font-size:13px;
+  margin-top:5px;
+}
+
+.artCommText {
+  width:715px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  margin-top:2px;
+}
+
+#articleCommTitle {
+  width:750px;
+  color:#353537;
+  font-family: Oswald;
+  font-weight: bold;
+  font-size:36px;
+  padding:0 0 2px 0;
+  margin-top:20px;
+  margin-bottom:5px;
+  float:left;
+  border-bottom:4px solid #353537;
+}
+
+#artCommNone {
+  width:750px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  text-align: center;
+  padding-top:15px;
+  padding-bottom:20px;
+  border-bottom:1px solid #eeeeee;
+}
+
+/* ---------- article comment form ---------- */
+
+#commentForm {
+  width:750px;
+  float:left;
+  margin-top:30px;
+}
+
+#commentFormTitle {
+  width:750px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:24px;
+  line-height:24px;
+  margin-bottom:20px;
+}
+
+#commentLaName {
+  width:360px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+#commentLaMail {
+  width:360px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  margin-bottom:5px;
+  margin-left:30px;
+}
+
+#commentLaText {
+  width:750px;
+  float:left;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  margin-top:20px;
+  margin-bottom:5px;
+}
+
+#commentName {
+  width:338px;
+  float:left;
+  border:1px solid #e6e6e6;
+  border-radius:3px;
+  height:24px;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  padding:10px;
+}
+
+#commentMail {
+  width:338px;
+  float:left;
+  border:1px solid #e6e6e6;
+  border-radius:3px;
+  height:24px;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  padding:10px;
+  margin-left:30px;
+}
+
+#commentMessage {
+  width:730px;
+  float:left;
+  border:1px solid #e6e6e6;
+  border-radius:3px;
+  height:100px;
+  color:#353537;
+  font-family: Open_Sans;
+  font-weight: normal;
+  font-size:14px;
+  padding:10px;
+  resize: vertical;
+}
+
+#commentSubmit {
+  float:left;
+  background-color:#E6E6E6;
+  height:44px;
+  padding:0 35px 0 35px;
+  border:0;
+  cursor: pointer;
+  font-size:14px;
+  color:#777;
+  font-family:Oswald;
+  font-weight: normal;
+  margin:15px 15px 0 0;
 }
 
 /* ---------- aside ---------- */
