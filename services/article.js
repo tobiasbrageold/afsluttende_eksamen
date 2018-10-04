@@ -300,5 +300,140 @@ module.exports = {
                 resolve(result);
             });
         })
+    },
+    articleAllCount: () => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT COUNT(*) as 'articleCount'
+                FROM article
+            `;
+
+            db.query(sql, function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    articleOffLim: (articleOff, articleLim) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT
+                    article.id,
+                    article.title,
+                    article.article,
+                    article.time,
+                    article.views,
+                    category.name as 'category_name',
+                    category.id as 'category_id'
+                FROM article
+                INNER JOIN category ON article.category_fk = category.id
+                ORDER BY article.time DESC
+                LIMIT ?
+                OFFSET ?
+            `;
+
+            db.query(sql, [articleLim, articleOff], function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    srcAll: (srcQue, srcOff, srcLim) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT
+                    article.id,
+                    article.title,
+                    article.article,
+                    article.time,
+                    article.views,
+                    category.name as 'category_name',
+                    category.id as 'category_id',
+                    editor.f_name,
+                    editor.l_name
+                FROM article
+                INNER JOIN category ON article.category_fk = category.id
+                INNER JOIN editor ON article.editor_fk = editor.id
+                WHERE article.title LIKE '%' ? '%'
+                OR article.article LIKE '%' ? '%'
+                OR editor.f_name LIKE '%' ? '%'
+                OR editor.l_name LIKE '%' ? '%'
+                OR category.name_d LIKE '%' ? '%'
+                LIMIT ?
+                OFFSET ?
+            `;
+
+            db.query(sql,[srcQue, srcQue, srcQue, srcQue, srcQue, srcLim, srcOff], function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    srcAllCount: (srcQue) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT COUNT(*) as 'articleCount'
+                    FROM article
+                INNER JOIN category ON article.category_fk = category.id
+                INNER JOIN editor ON article.editor_fk = editor.id
+                WHERE article.title LIKE '%' ? '%'
+                OR article.article LIKE '%' ? '%'
+                OR editor.f_name LIKE '%' ? '%'
+                OR editor.l_name LIKE '%' ? '%'
+                OR category.name_d LIKE '%' ? '%'
+            `;
+
+            db.query(sql,[srcQue, srcQue, srcQue, srcQue, srcQue], function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    siteAbout: () => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT
+                    *
+                FROM about
+            `;
+
+            db.query(sql, function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    messageAdd: (contName, contMail, contSubj, contMess, contTime) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                INSERT INTO messages
+                VALUES ('', ?, ?, ?, ?, ?)
+            `;
+
+            db.query(sql, [contName, contMail, contSubj, contMess, contTime], function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    editorsAll: (contName, contMail, contSubj, contMess, contTime) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT
+                    *
+                FROM editor
+            `;
+
+            db.query(sql, function (err, result) {
+                resolve(result);
+            });
+        })
+    },
+    sponsorAbout: (contName, contMail, contSubj, contMess, contTime) => {
+        return new Promise((resolve, reject) => {
+            let sql = `
+                SELECT
+                    *
+                FROM sponsor_about
+            `;
+
+            db.query(sql, function (err, result) {
+                resolve(result);
+            });
+        })
     }
 }

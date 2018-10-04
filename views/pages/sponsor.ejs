@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Magasinet - Arkivet</title>
+        <title>Magasinet - Sponsor</title>
         <!-- style -->
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -21,21 +21,25 @@
                         <!-- breadcrumbs placed here -->
                     </span>
                     <h1 id="siteMainTitle">
-                        ARKIVET
+                        SPONSOR
                     </h1>
-                    <span id="archiveSrcQuery">
-                        <p class="archiveSrcDes">Din søgning på</p>
-                        <p class="archiveSrcTxt">motor</p>
-                        <p class="archiveSrcDes">returnerede</p>
-                        <p class="archiveSrcTxt">3</p>
-                        <p class="archiveSrcDes">artikler</p>
-                    </span>
-                    <ul id="siteCatList">
-                        <!-- category articles placed here -->
-                    </ul>
-                    <ul id="archivePagCon">
-                        <!-- paging placed here -->
-                    </ul>
+                    <p id="sponsorDesc">
+                        <!-- sponsor about placed here -->
+                    </p>
+                    <div id="sponPriceCon">
+                        <span id="sponPriceHead">
+                            <h2 class="sponPriceTit">
+                                <i class="far fa-eye"></i>Visninger
+                            </h2>
+                            <h2 class="sponPriceTit">
+                                Pris per visning
+                            </h2>
+                        </span>
+                        <ul id="sponsPriceList">
+                            <!-- sponsor pricing placed here -->
+                        </ul>
+                    </div>
+
                 </div> <!-- /siteContent -->
                 <aside id="siteAside">
                     <% include ../partials/asideArchive %>
@@ -57,7 +61,8 @@
         </main> <!-- /main -->
 
         <!-- script -->
-        <script src="/js/archive.js"></script>
+        <script src="/js/navigation.js"></script>
+        <script src="/js/sponsor.js"></script>
         <script src="/js/footer.js"></script>
     </body>
 </html>

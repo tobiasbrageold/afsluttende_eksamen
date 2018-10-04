@@ -106,15 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
         resultSpo.forEach(element => {;
             sponsorList.innerHTML += `
                 <li class="asideSponsorItem">
-                    <a class="asideSponsorLink" href="/sponsors">
-                        <img class="asideSponsorImg" src="/img/ads/${folderName[element.category_fk-1]}/${element.image}">
-                    </a>
+                    <img class="asideSponsorImg" src="/img/ads/${folderName[element.category_fk-1]}/${element.image}">
                 </li>
             `;
         });
         sponsorList.innerHTML += `
             <li class="asideSponsorItem">
-                <a id="asideYourSpoLink" href="">
+                <a id="asideYourSpoLink" href="/sponsors">
                     Din reklame her?
                 </a>
             </li>

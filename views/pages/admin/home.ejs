@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin</title>
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="cmsSideNav">
+            <!-- navigation placed here -->
+        </nav>
+        <main id="cmsMain">
+            <div id="cmsHeader">
+                <h1 id="cmsHeaderTitle">
+                    Artikler
+                </h1>
+                <div id="cmsHeaderUser">
+                    <span id="cmsHeaderUsername">
+                        admin
+                    </span>
+                    <ul id="cmsHeaderDrop">
+                        <li class="cmsHeaderDropItem">
+                            <a class="cmsHeaderDropLink" href="/admin/user/settings">
+                                Indstillinger
+                            </a>
+                        </li>
+                        <li class="cmsHeaderDropItem">
+                            <span class="cmsHeaderDropLink" id="userLogOut">
+                                Log ud
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span id="adminButtonSpan">
+                <button id="articleAdd" class="addBtn">
+                    <i class="fas fa-plus"></i>
+                    Tilføj artikel
+                </button>
+            </span>
+            <h2 class="adminArtCatTit" id="adminArtCatTit">
+                Alle artikler
+            </h2>
+            <ul id="adminArticleList" class="adminArticleList">
+                
+            </ul>
+
+            <div id="editArtCon">
+                <!-- edit article data placed here -->
+            </div>
+        </main>
+        <script src="/js/admin_home.js"></script>
+        <script src="/js/admin_styling.js"></script>
+        <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+    </body>
+</html>

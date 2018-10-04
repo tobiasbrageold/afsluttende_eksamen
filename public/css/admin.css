@@ -1,0 +1,493 @@
+/* ---------- document ---------- */
+
+* {
+    outline:0;
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+}
+  
+body {
+    background-color:#F0F0F0;
+}
+
+/* ---------- sign in ---------- */
+
+#signIn {
+    width:300px;
+    margin:200px auto 0 auto;
+}
+
+#signInTitle {
+    width:310px;
+    float:left;
+    color:#999;
+    text-align: center;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+#signInForm {
+    width:280px;
+    min-height:100px;
+    float:left;
+    background-color:#fff;
+    border:1px solid #ddd;
+    padding:15px 15px 15px 15px;
+    border-radius:5px;
+}
+
+.signInLabel {
+    float:left;
+    color:#555;
+    font-size:16px;
+    width:300px;
+} 
+
+.signInInput {
+    float:left;
+    color:#999;
+    font-size:16px;
+    width:267px;
+    padding:5px;
+    border:1px solid #ddd;
+    margin-top:5px;
+    margin-bottom:15px;
+} 
+
+#signInCancel {
+    float:left;
+    background-color:#E6E6E6;
+    padding:15px 35px 15px 35px;
+    border:0;
+    cursor: pointer;
+    font-size:14px;
+    color:#777;
+    text-decoration: none;
+}
+
+#signInSubmit {
+    float:right;
+    background-color:#3CB952;
+    padding:15px 35px 15px 35px;
+    border:0;
+    cursor: pointer;
+    font-size:14px;
+    color:#fff;
+    text-decoration: none;
+}
+
+/* ---------- admin content ---------- */
+
+#cmsSideNav {
+    width:280px;
+    background-color:#444A53;
+    position: fixed;
+    left:0;
+    top:0;
+    box-shadow:0px 60px 20px #333;
+    z-index:-1;
+}
+
+#cmsNavTitle {
+    width:265px;
+    float:left;
+    color:#C0C1C6;
+    padding:16px 0 16px 15px;
+    border-bottom:1px solid #373A41;
+    font-size:24px;
+}
+
+.navIcon {
+    float:left;
+    font-size:16px;
+    margin-top:2px;
+    min-width:22px;
+}
+
+#cmsNavForm {
+    width:280px;
+    float:left;
+    margin:15px 0 15px 0;
+}
+
+#cmsNavSearch {
+    width:200px;
+    float:left;
+    border:0;
+    height:16px;
+    background-color:#ffffff;
+    border-radius:18px;
+    padding:10px 0 10px 10px;
+    margin:0 0 0 15px;
+    font-size:16px;
+    outline:0;
+    color:#393F48;
+}
+
+#cmsNavSubmit {
+    background-image:url('/img/icon/search_dark.svg');
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center;
+    background-color:#444A53;
+    width:36px;
+    height:36px;
+    float:right;
+    border:0;
+    background-color:#ffffff;
+    margin:0 0 0 15px;
+    border-top-left-radius:18px;
+    border-bottom-left-radius:18px;
+    cursor: pointer;
+}
+
+#cmsNavList {
+    width:280px;
+    float:left;
+    min-height:100px;
+    overflow-x:hidden;
+    border-top:1px solid #373A41;
+}
+
+.cmsNavListItem {
+    width:280px;
+    float:left;
+    border-left:5px solid transparent;
+    overflow:hidden;
+}
+
+.cmsNavListItem:hover {
+    background-color:#292B31;
+}
+
+.cmsNavListItemActive {
+    background-color:#292B31;
+    border-left:5px solid #C0C1C6;
+    width:280px;
+    float:left;
+    overflow:hidden;
+}
+
+.cmsNavListImg {
+    height:22px;
+    width:22px;
+    float:left;
+}
+
+.cmsNavListLink {
+    width:265px;
+    float:left;
+    color:#fff;
+    text-decoration: none;
+    font-size:18px;
+    padding:12px 0 4% 15px;
+}
+
+.cmsNavListLink span {
+    float:left;
+    width:228px;
+    padding:1px 0 2px 15px;
+}
+
+#cmsMain {
+    float:left;
+    margin:0 0 0 280px;
+    min-width:600px;
+}
+
+#cmsHeader {
+    background-color:#ffffff;
+    width:100%;
+    float:left;
+    min-height:60px;
+    border-bottom:1px solid #C0C1C6;
+}
+
+#cmsHeaderTitle {
+    width:50%;
+    float:left;
+    color:#292B31;
+    padding:16px 0 0 15px;
+    font-size:24px;
+}
+
+#cmsHeaderUser {
+    float:right;
+    height:60px;
+    padding:0 15px 0 0;
+    margin:0 15px 0 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#cmsHeaderUsername {
+    color:#292B31;
+    font-size:18px;
+    padding:20px 32px 20px 18px;
+    float:left;
+    background-image:url('/img/icon/arrow_down_dark.svg');
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-position: right 15px center;
+}
+
+#cmsHeaderUserMore {
+    height:10px;
+    margin:25px 0 0 0;
+}
+
+#cmsHeaderDrop {
+    background-color:#ffffff;
+    width:220px;
+    position: absolute;
+    top:50px;
+    right:15px;
+    border:1px solid #C0C1C6;
+    border-radius:5px;
+    box-shadow:0px 0px 10px #aaa;
+    list-style: none;
+}
+
+.cmsHeaderDropItem {
+    width:220px;
+    float:left;
+}
+
+.cmsHeaderDropLink {
+    width:205px;
+    float:left;
+    text-decoration: none;
+    color:#292B31;
+    font-size:16px;
+    padding:10px 0 10px 15px;
+    border-bottom:1px solid #C0C1C6;
+}
+
+.cmsHeaderDropItem:last-child .cmsHeaderDropLink {
+    border:0;
+}
+
+#adminButtonSpan {
+    float:left;
+    width:98%;
+    padding:2% 0 0 2%;
+}
+
+.addBtn {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.addBtn i {
+    font-size:16px;
+}
+
+/* ---------- articles ---------- */
+
+.adminArtCatTit {
+    width:96%;
+    float:left;
+    padding:2% 2% 0 2%;
+    font-size:24px;
+    line-height:24px;
+    color:#353537;
+}
+
+.adminArticleList {
+    width:96%;
+    float:left;
+    margin:1% 2% 2% 2%;
+    list-style:none;
+    border:1px solid #ddd;
+    border-radius:5px;
+    background-color:#fff;
+}
+
+.adminArtItem {
+    width:98%;
+    float:left;
+    padding:1%;
+    border-bottom:1px solid #ddd;
+}
+
+.adminArtItem:last-child {
+    border:0;
+}
+
+.adminArtTit {
+    width:100%;
+    float:left;
+    font-size:18px;
+    line-height:18px;
+    color:#555;
+    margin-bottom:1%;
+}
+
+.adminArtDesc {
+    width:100%;
+    float:left;
+    color:#555;
+    font-size:16px;
+}
+
+.adminArtInfo {
+    width:100%;
+    float:left;
+    margin-bottom:1%;
+}
+.adminArticleAbout {
+    float:left;
+    color:#999;
+    font-size:14px;
+    margin-right:10px;
+}
+
+.adminArticleIcon {
+    font-size:13px;
+    margin-right:5px;
+}
+
+.adminArtEditor {
+    width:100%;
+    float:left;
+    font-size:14px;
+    color:#999;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+.adminArtEditBtn {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.adminArtDeleteBtn {
+    float:left;
+    background-color:#E84D3D;
+    border:1px solid #E74635;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+    margin-left:1%;
+}
+
+.adminArtShowBtn {
+    float:left;
+    background-color:#E6E6E6;
+    border:1px solid #ccc;
+    border-radius:5px;
+    color:#555;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+    text-decoration:none;
+    margin-left:1%;
+}
+
+#editArtCon {
+    position: fixed;
+    width:100%;
+    min-height:100%;
+    background-color:rgba(0, 0, 0, 0.6);
+    z-index:99;
+    top:0;
+    left:0;
+    visibility: hidden;
+}
+
+#editArtMain {
+    width:770px;
+    height:800px;
+    background-color:#fff;
+    margin:5% auto 0 auto;
+    overflow-y:hide;
+    border:1px solid #ddd;
+    border-radius:5px;
+    box-shadow:0 0 15px #000;
+    padding:15px;
+}
+
+.editArtLabel {
+    width:800px;
+    float:left;
+    font-size:18px;
+    color:#999;
+}
+
+#editArtTitle {
+    width:747px;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:10px;
+    font-size:16px;
+    margin-top:15px;
+    margin-bottom:15px;
+    color:#555;
+}
+
+#editArtCat {
+    float:left;
+    width:770px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#editArtText {
+    float:left;
+    width:748px;
+    border:1px solid #ddd;
+    border-radius:5px;
+    margin-top:15px;
+    padding:10px;
+    font-size:16px;
+    color:#555;
+    min-height:525px;
+    resize: none;
+    margin-bottom:15px;
+}
+
+#editArtConfirm {
+    float:right;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+#editArtCancel {
+    float:left;
+    background-color:#E84D3D;
+    border:1px solid #E74635;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+#test {
+    float:left;
+    height:200px;
+    width:200px;
+    word-break: break-word;
+}

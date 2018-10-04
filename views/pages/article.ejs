@@ -12,11 +12,7 @@
     <body>
         <main id="siteMain">
             <div id="siteContainer">
-                <div id="siteHeader">
-                    <a href="/">
-                        <img id="siteHeaderImg" src="/img/logo/logo.png"> <!-- /siteHeaderImg -->
-                    </a>
-                </div> <!-- /header -->
+                <% include ../partials/siteHeader %>
                 <ul id="siteNav">
                     <!-- navigation placed here -->
                 </ul> <!-- /siteNav -->
@@ -54,12 +50,12 @@
                         <label id="commentLaMail">
                             Din e-mailadresse
                         </label>
-                        <input type="text" id="commentName" name="name" value="name" require>
-                        <input type="text" id="commentMail" name="email" value="mail@mail.com" require>
+                        <input type="text" id="commentName" name="name" require>
+                        <input type="text" id="commentMail" name="email" require>
                         <label id="commentLaText">
                             Kommentar
                         </label>
-                        <textarea id="commentMessage">hello world</textarea>
+                        <textarea id="commentMessage"></textarea>
                         <input id="commentSubmit" type="button" value="UDFØR">
                     </div> <!-- /commentForm -->
                 </div> <!-- /siteContent -->

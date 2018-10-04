@@ -1,4 +1,5 @@
-var article = require('../services/article');
+let article = require('../services/article');
+let admin = require('../services/admin');
 
 module.exports = function (app) {
 
@@ -28,7 +29,54 @@ module.exports = function (app) {
         res.render('pages/archive');
     }); // archive
 
+    app.get('/contact', (req, res) => {
+        res.render('pages/contact');
+    }); // contact
+
+    app.get('/editors', (req, res) => {
+        res.render('pages/editors');
+    }); // editors
+
+    app.get('/sponsors', (req, res) => {
+        res.render('pages/sponsor');
+    }); // sponsor
+
+    app.get('/admin/signin', (req, res) => {
+        res.render('pages/signin');
+    }); // sign in
+
+    app.get('/admin', (req, res) => {
+        res.render('pages/admin/home');
+    }); // admin
+
     // ---------- GET data ----------
+
+    app.get('/article/offset/:offset/:limit', async (req, res) => {
+        let articleOff = req.params.offset;
+        let articleLim = req.params.limit;
+        let articleOffRes = await article.articleOffLim(Number(articleOff), Number(articleLim));
+        res.send(articleOffRes);
+    }); // return articles by offset and limit
+
+    app.get('/editors/all', async (req, res) => {
+        let editorsRed = await article.editorsAll();
+        res.send(editorsRed);
+    }); // return all editors
+
+    app.get('/site/about', async (req, res) => {
+        let aboutRes = await article.siteAbout();
+        res.send(aboutRes);
+    }); // return about
+
+    app.get('/sponsor/about', async (req, res) => {
+        let sponsorRes = await article.sponsorAbout();
+        res.send(sponsorRes);
+    }); // return sponsor about
+
+    app.get('/article/all/count', async (req, res) => {
+        let articleAllCouRes = await article.articleAllCount();
+        res.send(articleAllCouRes);
+    }); // return articles count
 
     app.get('/article/data/:id', async (req, res) => {
         let articleId = req.params.id;
@@ -98,6 +146,20 @@ module.exports = function (app) {
         res.send(editorRes);
     }); // return sponsors by random with a limit
 
+    app.get('/search/count/:query', async (req, res) => {
+        let srcQue = req.params.query;
+        let srcRes = await article.srcAllCount(srcQue.toString());
+        res.send(srcRes);
+    }); // return articles count
+
+    app.get('/search/all/:query/:offset/:limit', async (req, res) => {
+        let srcQue = req.params.query;
+        let srcOff = req.params.offset;
+        let srcLim = req.params.limit;
+        let srcRes = await article.srcAll(srcQue.toString(), Number(srcOff), Number(srcLim));
+        res.send(srcRes);
+    }); // return articles by search query, offset and limit
+
     // ---------- newsletter ----------
 
     app.post('/newsletter/add', async (req, res) => {
@@ -137,5 +199,83 @@ module.exports = function (app) {
         let addCommentRes = await article.commentAdd(commentName, commentMail, commentMess, commentTime, commentArtId);
         res.send(addCommentRes);
     }); // add comment
+
+    // ---------- contact message ----------
+
+    app.post('/message/add', async (req, res) => {
+        let contactName = req.body.name;
+        let contactMail = req.body.email;
+        let contactSubj = req.body.subject;
+        let contactMess = req.body.message;
+        let contactTime = req.body.time;
+        let addMessageRes = await article.messageAdd(contactName, contactMail, contactSubj, contactMess, contactTime);
+        res.send(addMessageRes);
+    }); // add message
+
+    // ---------- admin ----------
+
+    app.post('/admin/login', async (req, res) => {
+        let username = req.body.username;
+        let userPass = req.body.password;
+        let userToken = req.body.token;
+        let confirmUser = await admin.confirmUsername(username);
+        let confirmPass = await admin.confirmUserPswd(username, userPass);
+        if(confirmUser.length == 1) {
+            if(confirmPass[0].user == 1) {
+                let userId = confirmUser[0].id;
+                await admin.removeToken(userId);
+                await admin.createToken(userToken, userId);
+                res.send({"message":"success", "userId":userId});
+            } else {
+                res.send({"message":"noPass"});
+            }
+        } else {
+            res.send({"message":"noUser"});
+        }
+    }); // login user
+
+    app.get('/confirm/token/:token/:userid', async (req, res) => {
+        let conToken = req.params.token;
+        let conUserId = req.params.userid;
+        let confirmTokenRes = await admin.confirmToken(conToken, conUserId);
+        res.send(confirmTokenRes);
+    }); // return all editors
+
+    app.get('/user/data/:userid', async (req, res) => {
+        let userId = req.params.userid;
+        let userDataRes = await admin.userData(userId);
+        res.send(userDataRes);
+    }); // return all editors
+
+    app.get('/articles/all', async (req, res) => {
+        let articleAllRes = await admin.articlesAll();
+        res.send(articleAllRes);
+    }); // return all articles
+
+    app.get('/articles/category/:category', async (req, res) => {
+        let artCategory = req.params.category;
+        let articleCatRes = await admin.articlesCat(Number(artCategory));
+        res.send(articleCatRes);
+    }); // return all articles
+
+    app.get('/category/all', async (req, res) => {
+        let categoryRes = await admin.categoryAll();
+        res.send(categoryRes);
+    }); // return all categories
+
+    app.put('/update/article', async (req, res) => {
+        let artCat = req.body.category;
+        let artTitle = req.body.title;
+        let artText = req.body.text;
+        let artId = req.body.articleid;
+        let categoryRes = await admin.updateArticle(Number(artId), Number(artCat), artTitle, artText);
+        res.send(categoryRes);
+    }); // update article
+
+    app.delete('/delete/article', async (req, res) => {
+        let artId = req.body.articleid;
+        let delArtRes = await admin.deleteArticle(Number(artId));
+        res.send(delArtRes);
+    }); // delete article
 
 };

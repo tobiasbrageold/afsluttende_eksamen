@@ -63,6 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
             alert('Indtast venligst en gyldig e-mailadresse.');
         }
     });
+
+    // ---------- fetch about ----------
+    fetch(`/site/about`)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(resultAbout) {
+        const footerInfoRoad = document.getElementById("footerInfoRoad");
+        const footerInfoCity = document.getElementById("footerInfoCity");
+        const footerInfoCountry = document.getElementById("footerInfoCountry");
+        const footerInfoPhone = document.getElementById("footerInfoPhone");
+        const footerInfoFax = document.getElementById("footerInfoFax");
+        const footerInfoEmail = document.getElementById("footerInfoEmail");
+        footerInfoRoad.innerHTML = resultAbout[0].street;
+        footerInfoCity.innerHTML = `${resultAbout[0].zip_code} ${resultAbout[0].city}`;
+        footerInfoCountry.innerHTML = resultAbout[0].country;
+        footerInfoPhone.innerHTML = `Telefon: ${resultAbout[0].phone}`;
+        footerInfoFax.innerHTML = `Fax: ${resultAbout[0].fax}`;
+        footerInfoEmail.innerHTML = `E-mail: ${resultAbout[0].email}`;
+    });
 });
 
 // ---------- check if email ----------

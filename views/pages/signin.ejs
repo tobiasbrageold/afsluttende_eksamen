@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Magasinet - log ind</title>
+        <!-- style -->
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <main id="signIn">
+            <h1 id="signInTitle">
+                log ind
+            </h1>
+            <div id="signInForm">
+                <label class="signInLabel">
+                    Brugernavn:
+                </label>
+                <input type="text" id="signInUsername" class="signInInput" value="admin">
+                <label class="signInLabel">
+                    Adgangskode:
+                </label>
+                <input type="password" id="signInPassword" class="signInInput" value="admin">
+                <a href="/" id="signInCancel">
+                    Annuller
+                </a>
+                <input type="button" id="signInSubmit" value="Log ind">
+            </div> <!-- /signInForm -->
+        </main> <!-- /main -->
+
+        <!-- script -->
+        <script src="/js/signin.js"></script>
+    </body>
+</html>

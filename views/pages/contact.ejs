@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Magasinet - Arkivet</title>
+        <title>Magasinet - Kontakt</title>
         <!-- style -->
         <link rel="stylesheet" href="/css/main.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -21,21 +21,31 @@
                         <!-- breadcrumbs placed here -->
                     </span>
                     <h1 id="siteMainTitle">
-                        ARKIVET
+                        KONTAKT MAGASINET
                     </h1>
-                    <span id="archiveSrcQuery">
-                        <p class="archiveSrcDes">Din søgning på</p>
-                        <p class="archiveSrcTxt">motor</p>
-                        <p class="archiveSrcDes">returnerede</p>
-                        <p class="archiveSrcTxt">3</p>
-                        <p class="archiveSrcDes">artikler</p>
-                    </span>
-                    <ul id="siteCatList">
-                        <!-- category articles placed here -->
-                    </ul>
-                    <ul id="archivePagCon">
-                        <!-- paging placed here -->
-                    </ul>
+                    <div id="contactInfoCon">
+                        <!-- about placed here -->
+                    </div>
+                    <h2 id="contactFormTitle">Kontaktformular</h2>
+                    <div id="contactForm">
+                        <label id="commentLaName">
+                            Dit navn
+                        </label>
+                        <label id="commentLaMail">
+                            Din e-mailadresse
+                        </label>
+                        <input type="text" id="commentName" name="name" require>
+                        <input type="text" id="commentMail" name="email" require>
+                        <label id="commentLaSubject">
+                            Emne
+                        </label>
+                        <input type="text" id="commentSubject" name="subject" require>
+                        <label id="commentLaText">
+                            Din besked
+                        </label>
+                        <textarea id="commentMessage"></textarea>
+                        <input id="commentSubmit" type="button" value="SEND BESKED">
+                    </div> <!-- /commentForm -->
                 </div> <!-- /siteContent -->
                 <aside id="siteAside">
                     <% include ../partials/asideArchive %>
@@ -57,7 +67,8 @@
         </main> <!-- /main -->
 
         <!-- script -->
-        <script src="/js/archive.js"></script>
+        <script src="/js/navigation.js"></script>
+        <script src="/js/contact.js"></script>
         <script src="/js/footer.js"></script>
     </body>
 </html>
