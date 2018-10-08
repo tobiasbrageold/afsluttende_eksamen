@@ -244,10 +244,13 @@ module.exports = {
         return new Promise((resolve, reject) => {
             let sql = `
                 SELECT
+                    id,
                     f_name,
                     l_name,
                     image,
-                    about
+                    about,
+                    category_fk,
+                    role_fk
                 FROM editor
                 WHERE id = ?
             `;
@@ -271,7 +274,8 @@ module.exports = {
                 SELECT
                    name,
                    comment,
-                   time
+                   time,
+                   article_fk
                 FROM comments
                 WHERE article_fk = ? 
             `;
@@ -410,12 +414,13 @@ module.exports = {
             });
         })
     },
-    editorsAll: (contName, contMail, contSubj, contMess, contTime) => {
+    editorsAll: () => {
         return new Promise((resolve, reject) => {
             let sql = `
                 SELECT
                     *
                 FROM editor
+                WHERE category_fk != 4
             `;
 
             db.query(sql, function (err, result) {

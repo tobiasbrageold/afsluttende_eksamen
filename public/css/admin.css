@@ -147,7 +147,6 @@ body {
     float:left;
     min-height:100px;
     overflow-x:hidden;
-    border-top:1px solid #373A41;
 }
 
 .cmsNavListItem {
@@ -284,6 +283,7 @@ body {
     font-size:18px;
     padding:10px 15px 10px 15px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .addBtn i {
@@ -376,7 +376,7 @@ body {
 }
 
 .adminArtDeleteBtn {
-    float:left;
+    float:right;
     background-color:#E84D3D;
     border:1px solid #E74635;
     border-radius:5px;
@@ -409,6 +409,7 @@ body {
     top:0;
     left:0;
     visibility: hidden;
+    overflow-y:scroll;
 }
 
 #editArtMain {
@@ -421,6 +422,7 @@ body {
     border-radius:5px;
     box-shadow:0 0 15px #000;
     padding:15px;
+    overflow-y:scroll;
 }
 
 .editArtLabel {
@@ -485,9 +487,478 @@ body {
     cursor: pointer;
 }
 
-#test {
+/* ---------- editors ---------- */
+
+.adminEdiDesc {
+    width:100%;
     float:left;
-    height:200px;
-    width:200px;
-    word-break: break-word;
+    color:#555;
+    font-size:16px;
+    margin-bottom:15px;
+}
+
+
+#editEdiCon {
+    position: fixed;
+    width:100%;
+    min-height:100%;
+    background-color:rgba(0, 0, 0, 0.6);
+    z-index:99;
+    top:0;
+    left:0;
+    visibility: hidden;
+}
+
+#editEdiMain {
+    width:770px;
+    height:800px;
+    background-color:#fff;
+    margin:5% auto 0 auto;
+    overflow-y:hide;
+    border:1px solid #ddd;
+    border-radius:5px;
+    box-shadow:0 0 15px #000;
+    padding:15px;
+}
+
+.editEdiInput {
+    width:747px;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:10px;
+    font-size:16px;
+    margin-top:15px;
+    margin-bottom:15px;
+    color:#555;
+}
+
+#editEdiText {
+    float:left;
+    width:748px;
+    border:1px solid #ddd;
+    border-radius:5px;
+    margin-top:15px;
+    padding:10px;
+    font-size:16px;
+    color:#555;
+    min-height:365px;
+    resize: none;
+    margin-bottom:15px;
+}
+
+#editEdiCat {
+    float:left;
+    width:770px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+#editEdiRole {
+    float:left;
+    width:770px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+
+/* ---------- categories ---------- */
+
+#adminCategoryMain {
+    width:96%;
+    float:left;
+    margin:1% 2% 2% 2%;
+    border:1px solid #ddd;
+    border-radius:5px;
+    background-color:#fff;
+    list-style:none;
+}
+
+.adminCatItem {
+    float:left;
+    width:98%;
+    border-bottom:1px solid #ddd;
+    padding:1%;
+}
+
+.adminCatItem:last-child {
+    border:0;
+}
+
+.adminCatItemTit {
+    width:90%;
+    float:left;
+    font-size:18px;
+    line-height:18px;
+    color:#555;
+}
+
+.adminCatSelect {
+    width:10%;
+    float:left;
+}
+
+#adminCatBtnCon {
+    float:left;
+    width:98%;
+    margin-left:2%;
+}
+
+#editCatConfirm {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+#adminEditCat {
+    width:96%;
+    padding:2% 2% 0 2%;
+    font-size:16px;
+    color:#999;
+    float:left;
+}
+
+/* ---------- comments ---------- */
+
+#adminComList {
+    width:96%;
+    float:left;
+    margin:1% 2% 2% 2%;
+    border:1px solid #ddd;
+    border-radius:5px;
+    background-color:#fff;
+    list-style:none;
+}
+
+.adminComItem {
+    float:left;
+    width:98%;
+    border-bottom:1px solid #ddd;
+    padding:1%;
+}
+
+.adminComTit {
+    width:100%;
+    float:left;
+    font-size:18px;
+    line-height:18px;
+    color:#555;
+    margin-bottom:1%;
+}
+
+.adminComComm {
+    width:100%;
+    float:left;
+    color:#555;
+    font-size:16px;
+}
+
+.adminComArt {
+    width:100%;
+    float:left;
+    color:#999;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+.adminComShowBtn {
+    float:left;
+    background-color:#E6E6E6;
+    border:1px solid #ccc;
+    border-radius:5px;
+    color:#555;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+/* ---------- contact ---------- */
+
+.adminMessDeleteBtn {
+    float:left;
+    background-color:#E84D3D;
+    border:1px solid #E74635;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.adminComArtSub {
+    width:100%;
+    float:left;
+    color:#999;
+    font-size:16px;
+    margin-bottom:1%;
+}
+
+.adminSpoImg {
+    width:15%;
+    float:left;
+}   
+
+.adminSpoTit {
+    width:79%;
+    float:left;
+    font-size:18px;
+    line-height:18px;
+    color:#555;
+    margin-left:1%;
+}
+
+.adminSpoSpan {
+    float:left;
+    width:100%;
+    margin-top:1%;
+}
+
+/* ---------- add sponsor ---------- */
+
+#addSpoForm {
+    width:94%;
+    float:left;
+    margin:1% 2% 2% 2%;
+    border:1px solid #ddd;
+    border-radius:5px;
+    background-color:#fff;
+    padding:1%;
+}
+
+#addSpoFormSub {
+    width:100%;
+    float:left;
+}
+
+#adminSpoSubmit {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+.adminSpoLabel {
+    float:left;
+    width:100%;
+    line-height:18px;
+    font-size:18px;
+    color:#999;
+}
+
+#adminSpoCom {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminSpoCat {
+    width:100%;
+    float:left;
+    margin-bottom:1%;
+    margin-top:1%;
+}
+
+#adminSpoFil {
+    width:100%;
+    float:left;
+    margin-bottom:2%;
+    margin-top:1%;
+}
+
+/* ---------- add article ---------- */
+
+#adminArtTit {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminArtText {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+    resize: vertical;
+    min-height:200px;
+}
+
+#adminArtSubmit {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+/* ---------- add editor ---------- */
+
+#addEdiFormSub {
+    width:100%;
+    float:left;
+}
+
+#adminEdiFName {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminEdiLName {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminEdiUsername {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminEdiPassword {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminEdiMail {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#adminEdiAbout {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+    resize: vertical;
+    min-height:200px;
+}
+
+#adminEdiSubmit {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    cursor: pointer;
+}
+
+/* ---------- update about ---------- */
+
+#updateAboutCon {
+    width:94%;
+    float:left;
+    margin:1% 2% 4% 2%;
+    border:1px solid #ddd;
+    border-radius:5px;
+    background-color:#fff;
+    padding:1%;
+}
+
+.aboutUpField {
+    width:97.7%;
+    float:left;
+    border:1px solid #ddd;
+    border-radius:5px;
+    padding:1%;
+    font-size:16px;
+    margin-top:1%;
+    margin-bottom:1%;
+    color:#555;
+}
+
+#aboutSubmit {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    margin-top:1%;
+    cursor: pointer;
+}
+
+/* ---------- user settings ---------- */
+
+#settingsSubmit {
+    float:left;
+    background-color:#80C235;
+    border:1px solid #3CB952;
+    border-radius:5px;
+    color:#fff;
+    font-size:18px;
+    padding:10px 15px 10px 15px;
+    margin-top:1%;
+    cursor: pointer;
 }

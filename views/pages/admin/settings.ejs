@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Admin</title>
+        <title>Admin - Indstillinger</title>
         <link rel="stylesheet" href="/css/admin.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     </head>
@@ -15,7 +15,7 @@
         <main id="cmsMain">
             <div id="cmsHeader">
                 <h1 id="cmsHeaderTitle">
-                    Artikler
+                    Indstillinger
                 </h1>
                 <div id="cmsHeaderUser">
                     <span id="cmsHeaderUsername">
@@ -35,25 +35,22 @@
                     </ul>
                 </div>
             </div>
-            <span id="adminButtonSpan">
-                <a id="articleAdd" class="addBtn" href="/admin/add/article">
-                    <i class="fas fa-plus"></i>
-                    Tilføj artikel
-                </a>
-            </span>
             <h2 class="adminArtCatTit" id="adminArtCatTit">
-                Alle artikler
+                Profil indstillinger
             </h2>
-            <ul id="adminArticleList" class="adminArticleList">
-                
-            </ul>
-
-            <div id="editArtCon">
-                <!-- edit article data placed here -->
+            <div id="updateAboutCon">
+                <label class="adminSpoLabel">Brugernavn</label>
+                <input type="text" id="userUsername" class="aboutUpField" required>
+                <label class="adminSpoLabel">Fornavn</label>
+                <input type="text" id="userForname" class="aboutUpField" required>
+                <label class="adminSpoLabel">Efternavn</label>
+                <input type="text" id="userLastname" class="aboutUpField" required>
+                <label class="adminSpoLabel">E-mailadresse</label>
+                <input type="text" id="userEmail" class="aboutUpField" required>
+                <button id="settingsSubmit">Gem</button>
             </div>
         </main>
-        <script src="/js/admin_home.js"></script>
+        <script src="/js/admin_settings.js"></script>
         <script src="/js/admin_styling.js"></script>
-        <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
     </body>
 </html>

@@ -15,7 +15,7 @@
         <main id="cmsMain">
             <div id="cmsHeader">
                 <h1 id="cmsHeaderTitle">
-                    Artikler
+                    Kontakt
                 </h1>
                 <div id="cmsHeaderUser">
                     <span id="cmsHeaderUsername">
@@ -35,25 +35,34 @@
                     </ul>
                 </div>
             </div>
-            <span id="adminButtonSpan">
-                <a id="articleAdd" class="addBtn" href="/admin/add/article">
-                    <i class="fas fa-plus"></i>
-                    Tilføj artikel
-                </a>
-            </span>
             <h2 class="adminArtCatTit" id="adminArtCatTit">
-                Alle artikler
+                Meddelser
             </h2>
-            <ul id="adminArticleList" class="adminArticleList">
-                
+            <ul id="adminComList">
+                <!-- comments placed here -->
             </ul>
-
-            <div id="editArtCon">
-                <!-- edit article data placed here -->
+            <h2 class="adminArtCatTit" id="adminArtCatTit">
+                Kontakt oplysninger
+            </h2>
+            <div id="updateAboutCon">
+                <label class="adminSpoLabel">Gadenavn</label>
+                <input type="text" id="aboutStreet" class="aboutUpField" required>
+                <label class="adminSpoLabel">Postnummer</label>
+                <input type="text" id="aboutZip" class="aboutUpField" required>
+                <label class="adminSpoLabel">By</label>
+                <input type="text" id="aboutCity" class="aboutUpField" required>
+                <label class="adminSpoLabel">Land</label>
+                <input type="text" id="aboutCountry" class="aboutUpField" required>
+                <label class="adminSpoLabel">Telefonnummer</label>
+                <input type="text" id="aboutPhone" class="aboutUpField" required>
+                <label class="adminSpoLabel">Fax</label>
+                <input type="text" id="aboutFax" class="aboutUpField" required>
+                <label class="adminSpoLabel">E-mailadresse</label>
+                <input type="text" id="aboutMail" class="aboutUpField" required>
+                <button id="aboutSubmit">Gem</button>
             </div>
         </main>
-        <script src="/js/admin_home.js"></script>
+        <script src="/js/admin_contact.js"></script>
         <script src="/js/admin_styling.js"></script>
-        <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
     </body>
 </html>

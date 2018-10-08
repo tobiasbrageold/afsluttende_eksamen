@@ -103,51 +103,53 @@ document.addEventListener("DOMContentLoaded", () => {
                             })
                             .then(function(resultAllArt) {
                                 resultAllArt.forEach(element => {
-                                    let elmDate = new Date(element.time*1000);
-                                    let elmDesc = element.article;
-                                    let finalDesc = '';
-                                    if(elmDesc.length >= 200) {
-                                        finalDesc = elmDesc.slice(0, 200);
-                                        finalDesc += ' ...';
-                                    } else {
-                                        finalDesc = elmDesc;
+                                    if(element.editor_fk == userId) {
+                                        let elmDate = new Date(element.time*1000);
+                                        let elmDesc = element.article;
+                                        let finalDesc = '';
+                                        if(elmDesc.length >= 200) {
+                                            finalDesc = elmDesc.slice(0, 200);
+                                            finalDesc += ' ...';
+                                        } else {
+                                            finalDesc = elmDesc;
+                                        }
+                                        fetch(`/editor/${element.editor_fk}`)
+                                        .then(function(response) {
+                                            return response.json();
+                                        })
+                                        .then(function(resultEditor) {
+                                            adminArticleList.innerHTML += `
+                                                <li class="adminArtItem">
+                                                    <h2 class="adminArtTit">
+                                                        ${element.title}
+                                                    </h2>
+                                                    <span class="adminArtInfo">
+                                                        <span class="adminArticleAbout"><i class="far fa-clock adminArticleIcon"></i>${elmDate.getDate()}. ${monthName[elmDate.getMonth()]} KL. ${twoDigit(elmDate.getHours())}:${twoDigit(elmDate.getMinutes())}</span>
+                                                        <span class="adminArticleAbout"><i class="far fa-eye adminArticleIcon"></i>${element.views} VISNINGER</span>
+                                                        <span class="adminArticleAbout"><i class="fas fa-tag adminArticleIcon"></i>Bil</span>
+                                                    </span>
+                                                    <p class="adminArtDesc">
+                                                        ${finalDesc}
+                                                    </p>
+                                                    <p class="adminArtEditor">
+                                                        Af ${resultEditor[0].f_name} ${resultEditor[0].l_name}
+                                                    </p>
+                                                    <button class="adminArtEditBtn" onclick="editArticle(${element.id});">
+                                                        <i class="fas fa-edit"></i>
+                                                        Rediger
+                                                    </button>
+                                                    <a href="/article/${element.id}" class="adminArtShowBtn">
+                                                        <i class="fas fa-external-link-alt"></i>
+                                                        Vis på siden
+                                                    </a>
+                                                    <button class="adminArtDeleteBtn" onclick="removeArticle(${element.id});">
+                                                        <i class="fas fa-times"></i>
+                                                        Slet
+                                                    </button>
+                                                </li>
+                                            `;
+                                        });
                                     }
-                                    fetch(`/editor/${element.editor_fk}`)
-                                    .then(function(response) {
-                                        return response.json();
-                                    })
-                                    .then(function(resultEditor) {
-                                        adminArticleList.innerHTML += `
-                                            <li class="adminArtItem">
-                                                <h2 class="adminArtTit">
-                                                    ${element.title}
-                                                </h2>
-                                                <span class="adminArtInfo">
-                                                    <span class="adminArticleAbout"><i class="far fa-clock adminArticleIcon"></i>${elmDate.getDate()}. ${monthName[elmDate.getMonth()]} KL. ${twoDigit(elmDate.getHours())}:${twoDigit(elmDate.getMinutes())}</span>
-                                                    <span class="adminArticleAbout"><i class="far fa-eye adminArticleIcon"></i>${element.views} VISNINGER</span>
-                                                    <span class="adminArticleAbout"><i class="fas fa-tag adminArticleIcon"></i>Bil</span>
-                                                </span>
-                                                <p class="adminArtDesc">
-                                                    ${finalDesc}
-                                                </p>
-                                                <p class="adminArtEditor">
-                                                    Af ${resultEditor[0].f_name} ${resultEditor[0].l_name}
-                                                </p>
-                                                <button class="adminArtEditBtn" onclick="editArticle(${element.id});">
-                                                    <i class="fas fa-edit"></i>
-                                                    Rediger
-                                                </button>
-                                                <a href="/article/${element.id}" class="adminArtShowBtn">
-                                                    <i class="fas fa-external-link-alt"></i>
-                                                    Vis på siden
-                                                </a>
-                                                <button class="adminArtDeleteBtn" onclick="removeArticle(${element.id});">
-                                                    <i class="fas fa-times"></i>
-                                                    Slet
-                                                </button>
-                                            </li>
-                                        `;
-                                    });
                                 });
                             });
                         }
@@ -161,10 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <h1 id="cmsNavTitle">
                                     CMS Adminstrator
                                 </h1>
-                                <form id="cmsNavForm" action="/admin/search">
-                                    <input id="cmsNavSubmit" type="submit" value="">
-                                    <input id="cmsNavSearch" type="text" name="q" placeholder="søg..">
-                                </form>
                                 <ul id="cmsNavList">
                                     <li class="cmsNavListItem cmsNavListItemActive">
                                         <a class="cmsNavListLink" href="/admin">
@@ -206,14 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             `;
                         } else if(userRole == 2) {
                             // ---------- editor navigation ----------
+                            const adminArtCatTit = document.getElementById("adminArtCatTit");
+                            adminArtCatTit.innerHTML = `Dine artikler`;
                             cmsSideNav.innerHTML = `
                                 <h1 id="cmsNavTitle">
                                     CMS Redaktør
                                 </h1>
-                                <form id="cmsNavForm" action="/admin/search">
-                                    <input id="cmsNavSubmit" type="submit" value="">
-                                    <input id="cmsNavSearch" type="text" name="q" placeholder="søg..">
-                                </form>
                                 <ul id="cmsNavList">
                                     <li class="cmsNavListItem cmsNavListItemActive">
                                         <a class="cmsNavListLink" href="/admin">

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin</title>
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="cmsSideNav">
+            <!-- navigation placed here -->
+        </nav>
+        <main id="cmsMain">
+            <div id="cmsHeader">
+                <h1 id="cmsHeaderTitle">
+                    Kategorier
+                </h1>
+                <div id="cmsHeaderUser">
+                    <span id="cmsHeaderUsername">
+                        admin
+                    </span>
+                    <ul id="cmsHeaderDrop">
+                        <li class="cmsHeaderDropItem">
+                            <a class="cmsHeaderDropLink" href="/admin/user/settings">
+                                Indstillinger
+                            </a>
+                        </li>
+                        <li class="cmsHeaderDropItem">
+                            <span class="cmsHeaderDropLink" id="userLogOut">
+                                Log ud
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p id="adminEditCat">
+                Ændre kategoriernes placering i menuen ved at angive rækkefælgen nedenunder.
+            </p>
+            <h2 class="adminArtCatTit" id="adminArtCatTit">
+                Alle kategorier
+            </h2>
+            <ul id="adminCategoryMain">
+                <li class="adminCatItem">
+                    <h2 class="adminCatItemTit">
+                        Biler
+                    </h2>
+                    <select class="adminCatSelect" id="adminCatCarSel">
+                        <option value="2">
+                            1
+                        </option>
+                        <option value="3">
+                            2
+                        </option>
+                        <option value="4">
+                            3
+                        </option>
+                    </select>
+                </li>
+                <li class="adminCatItem">
+                    <h2 class="adminCatItemTit">
+                        Både
+                    </h2>
+                    <select class="adminCatSelect" id="adminCatBoatSel">
+                        <option value="2">
+                            1
+                        </option>
+                        <option value="3">
+                            2
+                        </option>
+                        <option value="4">
+                            3
+                        </option>
+                    </select>
+                </li>
+                <li class="adminCatItem">
+                    <h2 class="adminCatItemTit">
+                        Bike's
+                    </h2>
+                    <select class="adminCatSelect" id="adminCatBikeSel">
+                        <option value="2">
+                            1
+                        </option>
+                        <option value="3">
+                            2
+                        </option>
+                        <option value="4">
+                            3
+                        </option>
+                    </select>
+                </li>
+            </ul>
+            <span id="adminCatBtnCon">
+                <button id="editCatConfirm">
+                    Gem
+                </button>
+            </span>
+        </main>
+        <script src="/js/admin_category.js"></script>
+        <script src="/js/admin_styling.js"></script>
+    </body>
+</html>

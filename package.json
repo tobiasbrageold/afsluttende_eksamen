@@ -9,7 +9,9 @@
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "mongodb": "^3.0.7",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "formidable": "^1.2.1",
+    "sharp": "^0.20.8"
   },
   "devDependencies": {},
   "scripts": {

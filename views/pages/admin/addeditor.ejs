@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admin</title>
+        <link rel="stylesheet" href="/css/admin.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav id="cmsSideNav">
+            <!-- navigation placed here -->
+        </nav>
+        <main id="cmsMain">
+            <div id="cmsHeader">
+                <h1 id="cmsHeaderTitle">
+                    Redaktører
+                </h1>
+                <div id="cmsHeaderUser">
+                    <span id="cmsHeaderUsername">
+                        admin
+                    </span>
+                    <ul id="cmsHeaderDrop">
+                        <li class="cmsHeaderDropItem">
+                            <a class="cmsHeaderDropLink" href="/admin/user/settings">
+                                Indstillinger
+                            </a>
+                        </li>
+                        <li class="cmsHeaderDropItem">
+                            <span class="cmsHeaderDropLink" id="userLogOut">
+                                Log ud
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h2 class="adminArtCatTit" id="adminArtCatTit">
+                Tilføj redaktør
+            </h2>
+            <div id="addSpoForm">
+                <form method="post" action="" id="addEdiFormSub" enctype="multipart/form-data">
+                    <label class="adminSpoLabel">Fornavn</label>
+                    <input type="text" name="name" id="adminEdiFName" required>
+                    <label class="adminSpoLabel">Efternavn</label>
+                    <input type="text" name="lastname" id="adminEdiLName" required>
+                    <label class="adminSpoLabel">E-mailadresse</label>
+                    <input type="password" name="email" id="adminEdiMail" required>
+                    <label class="adminSpoLabel">Brugernavn</label>
+                    <input type="text" name="username" id="adminEdiUsername" required>
+                    <label class="adminSpoLabel">Kodeord</label>
+                    <input type="password" name="password" id="adminEdiPassword" required>
+                    <label class="adminSpoLabel">Rolle</label>
+                    <select name="role" id="adminSpoCat">
+                        <option value="1">
+                            Adminstrator
+                        </option>
+                        <option value="2">
+                            Redaktør
+                        </option>
+                    </select>
+                    <label class="adminSpoLabel">Kategori</label>
+                    <select name="category" id="adminSpoCat">
+                        <option value="1">
+                            Bil
+                        </option>
+                        <option value="2">
+                            Båd
+                        </option>
+                        <option value="3">
+                            Bike
+                        </option>
+                        <option value="4">
+                            Alle (Adminstrator)
+                        </option>
+                    </select>
+                    <label class="adminSpoLabel">Billede</label>
+                    <textarea id="adminEdiAbout" name="about"></textarea>
+                    <label class="adminSpoLabel">Billede</label>
+                    <input type="file" name="images" id="adminSpoFil" required>
+                    <button id="adminEdiSubmit" type="submit">Opret</button>
+                </form>
+            </div>
+        </main>
+        <script src="/js/admin_addeditor.js"></script>
+        <script src="/js/admin_styling.js"></script>
+    </body>
+</html>

@@ -15,7 +15,7 @@
         <main id="cmsMain">
             <div id="cmsHeader">
                 <h1 id="cmsHeaderTitle">
-                    Artikler
+                    Redaktører
                 </h1>
                 <div id="cmsHeaderUser">
                     <span id="cmsHeaderUsername">
@@ -35,25 +35,30 @@
                     </ul>
                 </div>
             </div>
-            <span id="adminButtonSpan">
-                <a id="articleAdd" class="addBtn" href="/admin/add/article">
-                    <i class="fas fa-plus"></i>
-                    Tilføj artikel
-                </a>
-            </span>
             <h2 class="adminArtCatTit" id="adminArtCatTit">
-                Alle artikler
+                Tilføj artikel
             </h2>
-            <ul id="adminArticleList" class="adminArticleList">
-                
-            </ul>
-
-            <div id="editArtCon">
-                <!-- edit article data placed here -->
+            <div id="addSpoForm">
+                <label class="adminSpoLabel">Titel</label>
+                <input type="text" id="adminArtTit" required>
+                <label class="adminSpoLabel" id="adminAddArtTit">Kategori</label>
+                <select name="category" id="adminSpoCat">
+                    <option value="1">
+                        Bil
+                    </option>
+                    <option value="2">
+                        Båd
+                    </option>
+                    <option value="3">
+                        Bike
+                    </option>
+                </select>
+                <label class="adminSpoLabel">Artikel</label>
+                <textarea id="adminArtText"></textarea>
+                <button id="adminArtSubmit">Opret</button>
             </div>
         </main>
-        <script src="/js/admin_home.js"></script>
+        <script src="/js/admin_addarticle.js"></script>
         <script src="/js/admin_styling.js"></script>
-        <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
     </body>
 </html>
